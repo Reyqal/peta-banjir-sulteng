@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width"
+    />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link rel="stylesheet" href="css/leaflet.css" />
+    <link rel="stylesheet" href="css/L.Control.Layers.Tree.css" />
+    <link rel="stylesheet" href="css/qgis2web.css" />
+    <link rel="stylesheet" href="css/fontawesome-all.min.css" />
+    <link rel="stylesheet" href="css/leaflet.photon.css" />
+    <style>
+      html,
+      body,
+      #map {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+      }
+
+      /* Custom Popup Styles */
+      .leaflet-popup-content-wrapper {
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        max-width: 450px;
+      }
+
+      .leaflet-popup-content {
+        margin: 15px;
+        line-height: 1.6;
+        max-height: 500px;
+        overflow-y: auto;
+      }
+
+      .leaflet-popup-content h3 {
+        margin-top: 0;
+      }
+
+      .leaflet-popup-content table {
+        font-size: 14px;
+      }
+
+      .leaflet-popup-content ul {
+        font-size: 13px;
+      }
+
+      /* Scrollbar untuk popup */
+      .leaflet-popup-content::-webkit-scrollbar {
+        width: 6px;
+      }
+
+      .leaflet-popup-content::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 10px;
+      }
+
+      .leaflet-popup-content::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 10px;
+      }
+
+      .leaflet-popup-content::-webkit-scrollbar-thumb:hover {
+        background: #555;
+      }
+    </style>
+    <link rel="stylesheet" href="css/styles.css" />
+    <title></title>
+  </head>
+  <body>
+        <header>
+      <h1>🗺️ Peta Interaktif Risiko Bencana Banjir</h1>
+      <p>Sulawesi Tengah</p>
+    </header>
+
+    <!-- Main Container -->
+    <div class="container">
+      <!-- Sidebar Navigation -->
+      <aside class="sidebar">
+        <h2>📋 Navigasi</h2>
+        
+        <div class="nav-section">
+          <h3>🗺️ Kabupaten/Kota</h3>
+          <div class="region-list">
+            <button
+              type="button"
+              class="region-btn"
+              data-region="Kota Palu"
+              data-risk="sangat-tinggi"
+            >
+              <span class="region-name">Kota Palu</span>
+              <span class="risk-badge risk-very-high">Sangat Tinggi</span>
+            </button>
+            <button
+              type="button"
+              class="region-btn"
+              data-region="Sigi"
+              data-risk="sangat-tinggi"
+            >
+              <span class="region-name">Kab. Sigi</span>
+              <span class="risk-badge risk-very-high">Sangat Tinggi</span>
+            </button>
+            <button
+              type="button"
+              class="region-btn"
+              data-region="Donggala"
+              data-risk="tinggi"
+            >
+              <span class="region-name">Kab. Donggala</span>
+              <span class="risk-badge risk-high">Tinggi</span>
+            </button>
+            <button
+              type="button"
+              class="region-btn"
+              data-region="Parigi Moutong"
+              data-risk="sedang"
+            >
+              <span class="region-name">Kab. Parigi Moutong</span>
+              <span class="risk-badge risk-medium">Sedang</span>
+            </button>
+            <button
+              type="button"
+              class="region-btn"
+              data-region="Poso"
+              data-risk="sedang"
+            >
+              <span class="region-name">Kab. Poso</span>
+              <span class="risk-badge risk-medium">Sedang</span>
+            </button>
+            <button
+              type="button"
+              class="region-btn"
+              data-region="Toli Toli"
+              data-risk="sedang"
+            >
+              <span class="region-name">Kab. Toli-Toli</span>
+              <span class="risk-badge risk-medium">Sedang</span>
+            </button>
+            <button
+              type="button"
+              class="region-btn"
+              data-region="Banggai"
+              data-risk="sedang"
+            >
+              <span class="region-name">Kab. Banggai</span>
+              <span class="risk-badge risk-medium">Sedang</span>
+            </button>
+            <button
+              type="button"
+              class="region-btn"
+              data-region="Morowali"
+              data-risk="sedang"
+            >
+              <span class="region-name">Kab. Morowali</span>
+              <span class="risk-badge risk-medium">Sedang</span>
+            </button>
+            <button
+              type="button"
+              class="region-btn"
+              data-region="Buol"
+              data-risk="rendah"
+            >
+              <span class="region-name">Kab. Buol</span>
+              <span class="risk-badge risk-low">Rendah</span>
+            </button>
+            <button
+              type="button"
+              class="region-btn"
+              data-region="Morowali Utara"
+              data-risk="rendah"
+            >
+              <span class="region-name">Kab. Morowali Utara</span>
+              <span class="risk-badge risk-low">Rendah</span>
+            </button>
+            <button
+              type="button"
+              class="region-btn"
+              data-region="Tojo Una Una"
+              data-risk="rendah"
+            >
+              <span class="region-name">Kab. Tojo Una-Una</span>
+              <span class="risk-badge risk-low">Rendah</span>
+            </button>
+            <button
+              type="button"
+              class="region-btn"
+              data-region="Banggai Kepulauan"
+              data-risk="rendah"
+            >
+              <span class="region-name">Kab. Banggai Kepulauan</span>
+              <span class="risk-badge risk-low">Rendah</span>
+            </button>
+            <button
+              type="button"
+              class="region-btn"
+              data-region="Banggai Laut"
+              data-risk="rendah"
+            >
+              <span class="region-name">Kab. Banggai Laut</span>
+              <span class="risk-badge risk-low">Rendah</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="nav-section info-box">
+          <h3>ℹ️ Informasi</h3>
+          <p>
+            Klik pada titik atau area di peta untuk melihat detail informasi dan
+            gambar lokasi.
+          </p>
+        </div>
+      </aside>
+
+      <!-- Map Container -->
+      <main class="map-container">
+        <div id="map"></div>
+      </main>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2025 Sistem Informasi Mitigasi Bencana Sulawesi Tengah</p>
+    </footer>
+
+
+    <script src="js/qgis2web_expressions.js"></script>
+    <script src="js/leaflet.js"></script>
+    <script src="js/L.Control.Layers.Tree.min.js"></script>
+    <script src="js/leaflet.rotatedMarker.js"></script>
+    <script src="js/leaflet.pattern.js"></script>
+    <script src="js/leaflet-hash.js"></script>
+    <script src="js/Autolinker.min.js"></script>
+    <script src="js/rbush.min.js"></script>
+    <script src="js/labelgun.min.js"></script>
+    <script src="js/labels.js"></script>
+    <script src="js/leaflet.photon.js"></script>
+    <script src="data/RBI_50K_2023_SulawesiTengah_1.js"></script>
+    <script src="js/flood-data.js"></script>
+    <script>
+      var map = L.map("map", {
+        zoomControl: false,
+        maxZoom: 28,
+        minZoom: 1,
+      }).fitBounds([
+        [-4.2083195725146085, 114.7662685134822],
+        [1.0572673393853753, 124.85189267550601],
+      ]);
+      var hash = new L.Hash(map);
+      map.attributionControl.setPrefix(
+        '<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>'
+      );
+      var autolinker = new Autolinker({
+        truncate: { length: 30, location: "smart" },
+      });
+      // remove popup's row if "visible-with-data"
+      function removeEmptyRowsFromPopupContent(content, feature) {
+        var tempDiv = document.createElement("div");
+        tempDiv.innerHTML = content;
+        var rows = tempDiv.querySelectorAll("tr");
+        for (var i = 0; i < rows.length; i++) {
+          var td = rows[i].querySelector("td.visible-with-data");
+          var key = td ? td.id : "";
+          if (
+            td &&
+            td.classList.contains("visible-with-data") &&
+            feature.properties[key] == null
+          ) {
+            rows[i].parentNode.removeChild(rows[i]);
+          }
+        }
+        return tempDiv.innerHTML;
+      }
+      // modify popup if contains media
+      function addClassToPopupIfMedia(content, popup) {
+        var tempDiv = document.createElement("div");
+        tempDiv.innerHTML = content;
+        var imgTd = tempDiv.querySelector("td img");
+        if (imgTd) {
+          var src = imgTd.getAttribute("src");
+          if (/\.(jpg|jpeg|png|gif|bmp|webp|avif)$/i.test(src)) {
+            popup._contentNode.classList.add("media");
+            setTimeout(function () {
+              popup.update();
+            }, 10);
+          } else if (/\.(mp3|wav|ogg|aac)$/i.test(src)) {
+            var audio = document.createElement("audio");
+            audio.controls = true;
+            audio.src = src;
+            imgTd.parentNode.replaceChild(audio, imgTd);
+            popup._contentNode.classList.add("media");
+            setTimeout(function () {
+              popup.setContent(tempDiv.innerHTML);
+              popup.update();
+            }, 10);
+          } else if (/\.(mp4|webm|ogg|mov)$/i.test(src)) {
+            var video = document.createElement("video");
+            video.controls = true;
+            video.src = src;
+            video.style.width = "400px";
+            video.style.height = "300px";
+            video.style.maxHeight = "60vh";
+            video.style.maxWidth = "60vw";
+            imgTd.parentNode.replaceChild(video, imgTd);
+            popup._contentNode.classList.add("media");
+            // Aggiorna il popup quando il video carica i metadati
+            video.addEventListener("loadedmetadata", function () {
+              popup.update();
+            });
+            setTimeout(function () {
+              popup.setContent(tempDiv.innerHTML);
+              popup.update();
+            }, 10);
+          } else {
+            popup._contentNode.classList.remove("media");
+          }
+        } else {
+          popup._contentNode.classList.remove("media");
+        }
+      }
+      var zoomControl = L.control
+        .zoom({
+          position: "topleft",
+        })
+        .addTo(map);
+      var bounds_group = new L.featureGroup([]);
+      function setBounds() {}
+      map.createPane("pane_OpenStreetMap_0");
+      map.getPane("pane_OpenStreetMap_0").style.zIndex = 400;
+      var layer_OpenStreetMap_0 = L.tileLayer(
+        "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+        {
+          pane: "pane_OpenStreetMap_0",
+          opacity: 1.0,
+          attribution: "",
+          minZoom: 1,
+          maxZoom: 28,
+          minNativeZoom: 0,
+          maxNativeZoom: 19,
+        }
+      );
+      layer_OpenStreetMap_0;
+      map.addLayer(layer_OpenStreetMap_0);
+      function pop_RBI_50K_2023_SulawesiTengah_1(feature, layer) {
+        var regionName = feature.properties["NAMOBJ"];
+        var data = floodData[regionName];
+
+        var popupContent =
+          '<div style="font-family: Arial, sans-serif; max-width: 400px;">';
+        popupContent +=
+          '<h3 style="margin: 0 0 10px 0; color: #1976d2; border-bottom: 2px solid #1976d2; padding-bottom: 5px;">';
+        popupContent += "🌊 " + regionName + "</h3>";
+
+        if (data) {
+          var riskColor = getRiskColor(data.tingkatRisiko);
+          var riskEmoji = getRiskEmoji(data.tingkatRisiko);
+
+          popupContent +=
+            '<div style="background: ' +
+            riskColor +
+            '; color: white; padding: 8px; border-radius: 5px; margin-bottom: 10px; font-weight: bold; text-align: center;">';
+          popupContent +=
+            riskEmoji + " Tingkat Risiko: " + data.tingkatRisiko.toUpperCase();
+          popupContent += "</div>";
+
+          popupContent +=
+            '<table style="width: 100%; border-collapse: collapse;">';
+          popupContent +=
+            '<tr><td style="padding: 5px 0; font-weight: bold;">📊 Frekuensi Banjir:</td></tr>';
+          popupContent +=
+            '<tr><td style="padding: 5px 0 10px 15px;">' +
+            data.frekuensiBanjir +
+            "</td></tr>";
+
+          popupContent +=
+            '<tr><td style="padding: 5px 0; font-weight: bold;">📅 Kejadian Terakhir:</td></tr>';
+          popupContent +=
+            '<tr><td style="padding: 5px 0 10px 15px;">' +
+            data.kejadianTerakhir +
+            "</td></tr>";
+
+          popupContent +=
+            '<tr><td style="padding: 5px 0; font-weight: bold;">📍 Wilayah Terdampak:</td></tr>';
+          popupContent +=
+            '<tr><td style="padding: 5px 0 10px 15px;">' +
+            data.wilayahTerdampak +
+            "</td></tr>";
+
+          popupContent +=
+            '<tr><td style="padding: 5px 0; font-weight: bold;">💀 Korban Jiwa:</td></tr>';
+          popupContent +=
+            '<tr><td style="padding: 5px 0 10px 15px;">' +
+            data.korbanJiwa +
+            "</td></tr>";
+
+          popupContent +=
+            '<tr><td style="padding: 5px 0; font-weight: bold;">💰 Kerugian Material:</td></tr>';
+          popupContent +=
+            '<tr><td style="padding: 5px 0 10px 15px;">' +
+            data.kerugianMaterial +
+            "</td></tr>";
+
+          popupContent +=
+            '<tr><td style="padding: 5px 0; font-weight: bold;">🏠 Rumah Terendam:</td></tr>';
+          popupContent +=
+            '<tr><td style="padding: 5px 0 10px 15px;">' +
+            data.rumahTerendam +
+            "</td></tr>";
+
+          popupContent +=
+            '<tr><td style="padding: 5px 0; font-weight: bold;">📝 Deskripsi:</td></tr>';
+          popupContent +=
+            '<tr><td style="padding: 5px 0 10px 15px; text-align: justify;">' +
+            data.deskripsi +
+            "</td></tr>";
+
+          popupContent +=
+            '<tr><td style="padding: 5px 0; font-weight: bold;">🛡️ Upaya Mitigasi:</td></tr>';
+          popupContent +=
+            '<tr><td style="padding: 5px 0 10px 15px; text-align: justify;">' +
+            data.mitigasi +
+            "</td></tr>";
+
+          // Tambahkan gambar jika tersedia
+          if (data.imageUrl) {
+            popupContent +=
+              '<tr><td style="padding: 10px 0;"><img src="' +
+              data.imageUrl +
+              '" alt="' +
+              regionName +
+              '" style="width: 100%; max-width: 400px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.2);" onerror="this.style.display=\'none\';"></td></tr>';
+          }
+
+          if (data.riwayat && data.riwayat.length > 0) {
+            popupContent +=
+              '<tr><td style="padding: 10px 0 5px 0; font-weight: bold;">📋 Riwayat Banjir:</td></tr>';
+            popupContent +=
+              '<tr><td style="padding: 0 0 0 15px;"><ul style="margin: 5px 0; padding-left: 20px;">';
+            data.riwayat.slice(0, 4).forEach(function (r) {
+              popupContent +=
+                '<li style="margin: 3px 0;">' +
+                r.tahun +
+                " - " +
+                r.bulan +
+                ": Ketinggian " +
+                r.tinggi +
+                " (" +
+                r.durasi +
+                ")</li>";
+            });
+            popupContent += "</ul></td></tr>";
+          }
+
+          popupContent += "</table>";
+        } else {
+          popupContent +=
+            "<p><em>Data banjir belum tersedia untuk wilayah ini.</em></p>";
+          popupContent +=
+            "<p><strong>Luas Wilayah:</strong> " +
+            (feature.properties["LUASWH"]
+              ? feature.properties["LUASWH"].toFixed(2) + " km²"
+              : "-") +
+            "</p>";
+        }
+
+        popupContent += "</div>";
+        var content = popupContent;
+        layer.on("popupopen", function (e) {
+          addClassToPopupIfMedia(content, e.popup);
+        });
+        layer.bindPopup(content, { maxHeight: 400 });
+      }
+
+      function style_RBI_50K_2023_SulawesiTengah_1_0(feature) {
+        switch (String(feature.properties["NAMOBJ"])) {
+          case "Banggai":
+            return {
+              pane: "pane_RBI_50K_2023_SulawesiTengah_1",
+              opacity: 1,
+              color: "rgba(35,35,35,1.0)",
+              dashArray: "",
+              lineCap: "butt",
+              lineJoin: "miter",
+              weight: 1.0,
+              fill: true,
+              fillOpacity: 1,
+              fillColor: "rgba(228,33,92,1.0)",
+              interactive: true,
+            };
+            break;
+          case "Banggai Kepulauan":
+            return {
+              pane: "pane_RBI_50K_2023_SulawesiTengah_1",
+              opacity: 1,
+              color: "rgba(35,35,35,1.0)",
+              dashArray: "",
+              lineCap: "butt",
+              lineJoin: "miter",
+              weight: 1.0,
+              fill: true,
+              fillOpacity: 1,
+              fillColor: "rgba(110,214,183,1.0)",
+              interactive: true,
+            };
+            break;
+          case "Banggai Laut":
+            return {
+              pane: "pane_RBI_50K_2023_SulawesiTengah_1",
+              opacity: 1,
+              color: "rgba(35,35,35,1.0)",
+              dashArray: "",
+              lineCap: "butt",
+              lineJoin: "miter",
+              weight: 1.0,
+              fill: true,
+              fillOpacity: 1,
+              fillColor: "rgba(55,194,212,1.0)",
+              interactive: true,
+            };
+            break;
+          case "Buol":
+            return {
+              pane: "pane_RBI_50K_2023_SulawesiTengah_1",
+              opacity: 1,
+              color: "rgba(35,35,35,1.0)",
+              dashArray: "",
+              lineCap: "butt",
+              lineJoin: "miter",
+              weight: 1.0,
+              fill: true,
+              fillOpacity: 1,
+              fillColor: "rgba(102,104,213,1.0)",
+              interactive: true,
+            };
+            break;
+          case "Donggala":
+            return {
+              pane: "pane_RBI_50K_2023_SulawesiTengah_1",
+              opacity: 1,
+              color: "rgba(35,35,35,1.0)",
+              dashArray: "",
+              lineCap: "butt",
+              lineJoin: "miter",
+              weight: 1.0,
+              fill: true,
+              fillOpacity: 1,
+              fillColor: "rgba(171,232,86,1.0)",
+              interactive: true,
+            };
+            break;
+          case "Kota Palu":
+            return {
+              pane: "pane_RBI_50K_2023_SulawesiTengah_1",
+              opacity: 1,
+              color: "rgba(35,35,35,1.0)",
+              dashArray: "",
+              lineCap: "butt",
+              lineJoin: "miter",
+              weight: 1.0,
+              fill: true,
+              fillOpacity: 1,
+              fillColor: "rgba(192,124,204,1.0)",
+              interactive: true,
+            };
+            break;
+          case "Morowali":
+            return {
+              pane: "pane_RBI_50K_2023_SulawesiTengah_1",
+              opacity: 1,
+              color: "rgba(35,35,35,1.0)",
+              dashArray: "",
+              lineCap: "butt",
+              lineJoin: "miter",
+              weight: 1.0,
+              fill: true,
+              fillOpacity: 1,
+              fillColor: "rgba(222,147,49,1.0)",
+              interactive: true,
+            };
+            break;
+          case "Morowali Utara":
+            return {
+              pane: "pane_RBI_50K_2023_SulawesiTengah_1",
+              opacity: 1,
+              color: "rgba(35,35,35,1.0)",
+              dashArray: "",
+              lineCap: "butt",
+              lineJoin: "miter",
+              weight: 1.0,
+              fill: true,
+              fillOpacity: 1,
+              fillColor: "rgba(113,166,230,1.0)",
+              interactive: true,
+            };
+            break;
+          case "Parigi Moutong":
+            return {
+              pane: "pane_RBI_50K_2023_SulawesiTengah_1",
+              opacity: 1,
+              color: "rgba(35,35,35,1.0)",
+              dashArray: "",
+              lineCap: "butt",
+              lineJoin: "miter",
+              weight: 1.0,
+              fill: true,
+              fillOpacity: 1,
+              fillColor: "rgba(203,201,65,1.0)",
+              interactive: true,
+            };
+            break;
+          case "Poso":
+            return {
+              pane: "pane_RBI_50K_2023_SulawesiTengah_1",
+              opacity: 1,
+              color: "rgba(35,35,35,1.0)",
+              dashArray: "",
+              lineCap: "butt",
+              lineJoin: "miter",
+              weight: 1.0,
+              fill: true,
+              fillOpacity: 1,
+              fillColor: "rgba(80,225,55,1.0)",
+              interactive: true,
+            };
+            break;
+          case "Sigi":
+            return {
+              pane: "pane_RBI_50K_2023_SulawesiTengah_1",
+              opacity: 1,
+              color: "rgba(35,35,35,1.0)",
+              dashArray: "",
+              lineCap: "butt",
+              lineJoin: "miter",
+              weight: 1.0,
+              fill: true,
+              fillOpacity: 1,
+              fillColor: "rgba(35,233,88,1.0)",
+              interactive: true,
+            };
+            break;
+          case "Tojo Una Una":
+            return {
+              pane: "pane_RBI_50K_2023_SulawesiTengah_1",
+              opacity: 1,
+              color: "rgba(35,35,35,1.0)",
+              dashArray: "",
+              lineCap: "butt",
+              lineJoin: "miter",
+              weight: 1.0,
+              fill: true,
+              fillOpacity: 1,
+              fillColor: "rgba(114,55,202,1.0)",
+              interactive: true,
+            };
+            break;
+          case "Toli Toli":
+            return {
+              pane: "pane_RBI_50K_2023_SulawesiTengah_1",
+              opacity: 1,
+              color: "rgba(35,35,35,1.0)",
+              dashArray: "",
+              lineCap: "butt",
+              lineJoin: "miter",
+              weight: 1.0,
+              fill: true,
+              fillOpacity: 1,
+              fillColor: "rgba(224,125,196,1.0)",
+              interactive: true,
+            };
+            break;
+        }
+      }
+      map.createPane("pane_RBI_50K_2023_SulawesiTengah_1");
+      map.getPane("pane_RBI_50K_2023_SulawesiTengah_1").style.zIndex = 401;
+      map.getPane("pane_RBI_50K_2023_SulawesiTengah_1").style[
+        "mix-blend-mode"
+      ] = "normal";
+      var layer_RBI_50K_2023_SulawesiTengah_1 = new L.geoJson(
+        json_RBI_50K_2023_SulawesiTengah_1,
+        {
+          attribution: "",
+          interactive: true,
+          dataVar: "json_RBI_50K_2023_SulawesiTengah_1",
+          layerName: "layer_RBI_50K_2023_SulawesiTengah_1",
+          pane: "pane_RBI_50K_2023_SulawesiTengah_1",
+          onEachFeature: pop_RBI_50K_2023_SulawesiTengah_1,
+          style: style_RBI_50K_2023_SulawesiTengah_1_0,
+        }
+      );
+      bounds_group.addLayer(layer_RBI_50K_2023_SulawesiTengah_1);
+      map.addLayer(layer_RBI_50K_2023_SulawesiTengah_1);
+      setBounds();
+    </script>
+    <script src="js/region-navigation.js"></script>
+  </body>
+</html>

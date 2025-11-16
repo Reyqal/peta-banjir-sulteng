@@ -1,0 +1,53 @@
+.leaflet-control-layers-tree {
+  padding: 6px 10px 6px 6px;
+  color: #333;
+  background: #fff;
+}
+
+.leaflet-control-layers-tree input {
+  margin-top: 2px;
+  margin-right: 5px;
+  position: relative;
+  top: 1px;
+}
+
+.leaflet-control-layers-tree label {
+  display: block;
+  cursor: pointer;
+}
+
+.leaflet-control-layers-tree ul {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 20px;
+}
+
+.leaflet-control-layers-tree li {
+  padding: 2px 0;
+}
+
+.leaflet-control-layers-tree span {
+  cursor: pointer;
+}
+
+.leaflet-control-layers-scrollbar {
+  overflow-y: scroll;
+  padding-right: 5px;
+}
+
+.leaflet-control-layers-selector {
+  margin-right: 5px;
+  position: relative;
+  top: 1px;
+}
+
+.leaflet-control-layers-separator {
+  height: 0;
+  border-top: 1px solid #ddd;
+  margin: 5px -10px 5px -6px;
+}
+
+.leaflet-control-layers-overlays,
+.leaflet-control-layers-base {
+  margin-top: 5px;
+}
