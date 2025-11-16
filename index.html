@@ -353,7 +353,7 @@
           '<div style="font-family: Arial, sans-serif; max-width: 400px;">';
         popupContent +=
           '<h3 style="margin: 0 0 10px 0; color: #1976d2; border-bottom: 2px solid #1976d2; padding-bottom: 5px;">';
-        popupContent += "🌊 " + regionName + "</h3>";
+        popupContent += "🌊 " + regionName + " (Data tahun 2022-2024) "+"</h3>";
 
         if (data) {
           var riskColor = getRiskColor(data.tingkatRisiko);
@@ -386,13 +386,6 @@
             "</td></tr>";
 
           popupContent +=
-            '<tr><td style="padding: 5px 0; font-weight: bold;">📅 Kejadian Terakhir:</td></tr>';
-          popupContent +=
-            '<tr><td style="padding: 5px 0 10px 15px;">' +
-            data.kejadianTerakhir +
-            "</td></tr>";
-
-          popupContent +=
             '<tr><td style="padding: 5px 0; font-weight: bold;">📍 Wilayah Terdampak:</td></tr>';
           popupContent +=
             '<tr><td style="padding: 5px 0 10px 15px;">' +
@@ -400,25 +393,36 @@
             "</td></tr>";
 
           popupContent +=
-            '<tr><td style="padding: 5px 0; font-weight: bold;">💀 Korban Jiwa:</td></tr>';
-          popupContent +=
-            '<tr><td style="padding: 5px 0 10px 15px;">' +
-            data.korbanJiwa +
-            "</td></tr>";
+            '<tr><td style="padding: 5px 0; font-weight: bold;">🤕 Korban :</td></tr>';
+          if (Array.isArray(data.korban)) {
+            data.korban.forEach(function(item) {
+              popupContent +=
+                '<tr><td style="padding: 5px 0 5px 15px;">' +
+                item +
+                "</td></tr>";
+            });
+          } else {
+            popupContent +=
+              '<tr><td style="padding: 5px 0 10px 15px;">' +
+              data.korban +
+              "</td></tr>";
+          }
 
           popupContent +=
-            '<tr><td style="padding: 5px 0; font-weight: bold;">💰 Kerugian Material:</td></tr>';
-          popupContent +=
-            '<tr><td style="padding: 5px 0 10px 15px;">' +
-            data.kerugianMaterial +
-            "</td></tr>";
-
-          popupContent +=
-            '<tr><td style="padding: 5px 0; font-weight: bold;">🏠 Rumah Terendam:</td></tr>';
-          popupContent +=
-            '<tr><td style="padding: 5px 0 10px 15px;">' +
-            data.rumahTerendam +
-            "</td></tr>";
+            '<tr><td style="padding: 5px 0; font-weight: bold;">🏠 Rumah Rusak:</td></tr>';
+          if (Array.isArray(data.rumahRusak)) {
+            data.rumahRusak.forEach(function(item) {
+              popupContent +=
+                '<tr><td style="padding: 5px 0 5px 15px;">' +
+                item +
+                "</td></tr>";
+            });
+          } else {
+            popupContent +=
+              '<tr><td style="padding: 5px 0 10px 15px;">' +
+              data.rumahRusak +
+              "</td></tr>";
+          }
 
           popupContent +=
             '<tr><td style="padding: 5px 0; font-weight: bold;">📝 Deskripsi:</td></tr>';
@@ -433,26 +437,6 @@
             '<tr><td style="padding: 5px 0 10px 15px; text-align: justify;">' +
             data.mitigasi +
             "</td></tr>";
-        
-          if (data.riwayat && data.riwayat.length > 0) {
-            popupContent +=
-              '<tr><td style="padding: 10px 0 5px 0; font-weight: bold;">📋 Riwayat Banjir:</td></tr>';
-            popupContent +=
-              '<tr><td style="padding: 0 0 0 15px;"><ul style="margin: 5px 0; padding-left: 20px;">';
-            data.riwayat.slice(0, 4).forEach(function (r) {
-              popupContent +=
-                '<li style="margin: 3px 0;">' +
-                r.tahun +
-                " - " +
-                r.bulan +
-                ": Ketinggian " +
-                r.tinggi +
-                " (" +
-                r.durasi +
-                ")</li>";
-            });
-            popupContent += "</ul></td></tr>";
-          }
 
           popupContent += "</table>";
         } else {
