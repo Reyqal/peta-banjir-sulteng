@@ -367,6 +367,15 @@
             riskEmoji + " Tingkat Risiko: " + data.tingkatRisiko.toUpperCase();
           popupContent += "</div>";
 
+          if (data.imageUrl) {
+            popupContent +=
+              '<tr><td style="padding: 10px 0;"><img src="' +
+              data.imageUrl +
+              '" alt="' +
+              regionName +
+              '" style="width: 100%; max-width: 400px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.2);" onerror="this.style.display=\'none\';"></td></tr>';
+          }
+          
           popupContent +=
             '<table style="width: 100%; border-collapse: collapse;">';
           popupContent +=
@@ -424,17 +433,7 @@
             '<tr><td style="padding: 5px 0 10px 15px; text-align: justify;">' +
             data.mitigasi +
             "</td></tr>";
-
-          // Tambahkan gambar jika tersedia
-          if (data.imageUrl) {
-            popupContent +=
-              '<tr><td style="padding: 10px 0;"><img src="' +
-              data.imageUrl +
-              '" alt="' +
-              regionName +
-              '" style="width: 100%; max-width: 400px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.2);" onerror="this.style.display=\'none\';"></td></tr>';
-          }
-
+        
           if (data.riwayat && data.riwayat.length > 0) {
             popupContent +=
               '<tr><td style="padding: 10px 0 5px 0; font-weight: bold;">📋 Riwayat Banjir:</td></tr>';

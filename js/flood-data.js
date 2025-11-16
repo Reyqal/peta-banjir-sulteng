@@ -11,6 +11,7 @@ var floodData = {
     deskripsi:
       "Banjir sering terjadi di kawasan pesisir dan dataran rendah, terutama saat musim hujan panjang dan pasang laut tinggi.",
     mitigasi: "Normalisasi sungai, pembuatan tanggul, early warning system",
+    imageUrl : "img/bangai.jpg",
     riwayat: [
       { tahun: 2024, bulan: "Februari", tinggi: "80 cm", durasi: "3 hari" },
       { tahun: 2023, bulan: "Desember", tinggi: "120 cm", durasi: "4 hari" },
@@ -29,6 +30,7 @@ var floodData = {
     deskripsi:
       "Banjir rob dan pasang laut tinggi sesekali menggenangi wilayah pesisir. Risiko banjir bandang sangat rendah karena topografi kepulauan.",
     mitigasi: "Tanaman mangrove, peninggian jalan pesisir, sistem drainase",
+    imageUrl : "img/bangai_kepulauan.jpg",
     riwayat: [
       { tahun: 2023, bulan: "Maret", tinggi: "40 cm", durasi: "1 hari" },
       { tahun: 2022, bulan: "Oktober", tinggi: "50 cm", durasi: "2 hari" },
@@ -45,6 +47,7 @@ var floodData = {
     deskripsi:
       "Wilayah kepulauan dengan ancaman terbatas. Lebih rentan terhadap abrasi dan banjir rob daripada banjir sungai.",
     mitigasi: "Pemecah ombak, penanaman mangrove, sistem drainase pesisir",
+    imageUrl : "img/bangai_laut.jpeg",
     riwayat: [
       { tahun: 2023, bulan: "April", tinggi: "35 cm", durasi: "1 hari" },
       { tahun: 2021, bulan: "Desember", tinggi: "45 cm", durasi: "1 hari" },
@@ -61,6 +64,7 @@ var floodData = {
     deskripsi:
       "Area pesisir dengan topografi berbukit. Banjir lokal terjadi di beberapa titik rendah saat hujan ekstrem.",
     mitigasi: "Pembangunan drainase, reboisasi, pemantauan curah hujan",
+    imageUrl : "img/buol.jpg",
     riwayat: [
       { tahun: 2024, bulan: "Januari", tinggi: "55 cm", durasi: "2 hari" },
       { tahun: 2023, bulan: "November", tinggi: "48 cm", durasi: "1 hari" },
@@ -75,7 +79,7 @@ var floodData = {
     korbanJiwa: "3 orang (2023)",
     kerugianMaterial: "Rp 25 Miliar",
     rumahTerendam: "~1,200 rumah",
-    imageUrl: "https://images.unsplash.com/photo-1563381013529-1c922c00bb36?w=600&h=400&fit=crop",
+    imageUrl: "img/donggala.jpg",
     deskripsi:
       "Wilayah pesisir dan dataran rendah sangat rawan banjir. Infrastruktur drainase terbatas dan sungai-sungai sering meluap saat musim hujan.",
     mitigasi:
@@ -96,7 +100,7 @@ var floodData = {
     korbanJiwa: "5 orang (2023)",
     kerugianMaterial: "Rp 45 Miliar",
     rumahTerendam: "~2,500 rumah",
-    imageUrl: "https://images.unsplash.com/photo-1547683905-f686c993aae5?w=600&h=400&fit=crop",
+    imageUrl: "img/palu.jpg",
     deskripsi:
       "Ibukota provinsi dengan intensitas banjir tertinggi. Sungai Palu yang meluap adalah penyebab utama, ditambah drainase kota yang kurang memadai dan perubahan tata guna lahan.",
     mitigasi:
@@ -122,6 +126,7 @@ var floodData = {
       "Daerah perbukitan dengan beberapa titik rawan longsor dan genangan. Banjir bandang dapat terjadi di lembah-lembah sungai saat hujan lebat.",
     mitigasi:
       "Reboisasi hutan lindung, pembangunan check dam, sistem peringatan dini longsor",
+    imageUrl : "img/mororwali.jpg",
     riwayat: [
       { tahun: 2024, bulan: "Maret", tinggi: "110 cm", durasi: "4 hari" },
       { tahun: 2023, bulan: "November", tinggi: "95 cm", durasi: "3 hari" },
@@ -140,6 +145,7 @@ var floodData = {
     deskripsi:
       "Wilayah pesisir utara dengan topografi bergelombang. Risiko banjir relatif rendah namun perlu waspada saat hujan ekstrem berkepanjangan.",
     mitigasi: "Sistem drainase alami, pemantauan cuaca, jalur evakuasi",
+    imageUrl : "img/morowali_utara.jpg",
     riwayat: [
       { tahun: 2023, bulan: "November", tinggi: "70 cm", durasi: "2 hari" },
       { tahun: 2023, bulan: "Mei", tinggi: "55 cm", durasi: "2 hari" },
@@ -158,6 +164,7 @@ var floodData = {
       "Area pertanian dengan sistem irigasi yang perlu perbaikan. Berpotensi banjir saat hujan lebat berkepanjangan dan luapan sungai-sungai di DAS Parigi.",
     mitigasi:
       "Perbaikan sistem irigasi, waduk penampung, pos curah hujan otomatis",
+    imageUrl : "img/parigi_moutong.jpeg",
     riwayat: [
       { tahun: 2024, bulan: "Februari", tinggi: "125 cm", durasi: "5 hari" },
       { tahun: 2023, bulan: "Desember", tinggi: "105 cm", durasi: "4 hari" },
@@ -178,6 +185,7 @@ var floodData = {
       "Wilayah sekitar Danau Poso dengan potensi luapan danau dan sungai. Topografi berbukit dengan beberapa area dataran rendah rawan genangan.",
     mitigasi:
       "Sistem pemantauan ketinggian Danau Poso, normalisasi outlet danau, early warning SMS",
+    imageUrl : "img/poso.jpeg",
     riwayat: [
       { tahun: 2024, bulan: "Januari", tinggi: "100 cm", durasi: "4 hari" },
       { tahun: 2023, bulan: "Oktober", tinggi: "115 cm", durasi: "5 hari" },
@@ -193,11 +201,11 @@ var floodData = {
     korbanJiwa: "4 orang (2023)",
     kerugianMaterial: "Rp 35 Miliar",
     rumahTerendam: "~1,800 rumah",
-    imageUrl: "https://images.unsplash.com/photo-1527838832700-5059252407fa?w=600&h=400&fit=crop",
     deskripsi:
       "Wilayah lembah dengan intensitas curah hujan sangat tinggi. Sungai Gumbasa dan Lariang sering meluap menggenangi pemukiman dan lahan pertanian.",
     mitigasi:
       "Waduk Gumbasa (15 juta m³), tanggul pengaman 3 km, 8 pos pemantauan, jalur evakuasi",
+    imageUrl: "img/kab_sigi.jpg",
     riwayat: [
       { tahun: 2024, bulan: "Maret", tinggi: "190 cm", durasi: "6 hari" },
       { tahun: 2024, bulan: "Januari", tinggi: "170 cm", durasi: "5 hari" },
@@ -218,6 +226,7 @@ var floodData = {
     deskripsi:
       "Area dengan topografi relatif aman. Banjir lokal terjadi pada beberapa titik dekat aliran sungai kecil dan wilayah pesisir saat pasang tinggi.",
     mitigasi: "Drainase alami, pemeliharaan DAS, sistem informasi cuaca",
+    imageUrl : "img/banjir_tojo_una_una.jpg",
     riwayat: [
       { tahun: 2023, bulan: "Desember", tinggi: "65 cm", durasi: "2 hari" },
       { tahun: 2023, bulan: "Juli", tinggi: "58 cm", durasi: "2 hari" },
@@ -236,6 +245,7 @@ var floodData = {
       "Wilayah pesisir utara dengan dataran rendah rawan genangan saat intensitas hujan tinggi dan pasang laut. Kombinasi banjir sungai dan rob memperbesar dampak.",
     mitigasi:
       "Tanggul pesisir, pompa air 50 m³/menit, normalisasi sungai, early warning",
+    imageUrl : "img/toli-toli.jpg",
     riwayat: [
       { tahun: 2024, bulan: "Februari", tinggi: "105 cm", durasi: "4 hari" },
       { tahun: 2023, bulan: "November", tinggi: "92 cm", durasi: "3 hari" },
