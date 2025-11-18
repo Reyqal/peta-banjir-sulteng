@@ -82,10 +82,10 @@ var floodData = {
   },
   "Morowali Utara": {
     tingkatRisiko: "Rendah",
-    frekuensiBanjir: "2-3 kali per tahun",
+    frekuensiBanjir: "0-6 kali per 3 tahun",
     wilayahTerdampak: "Kolonodale, Petasia Timur",
-    korban: ["Korban Jiwa: Tidak Ada", "Korban Luka-luka: Tidak Ada", "Korban Mengungsi: Tidak Ada"],
-    rumahRusak: ["Rumah Rusak Berat: Tidak Ada", "Rumah Rusak Sedang: Tidak Ada", "Rumah Rusak Ringan: Tidak Ada"],
+    korban: ["Korban Jiwa: Tidak Ada", "Korban Luka-luka: Tidak Ada", "Korban Mengungsi: 11.537"],
+    rumahRusak: ["Rumah Rusak Berat: Tidak Ada", "Rumah Rusak Sedang: Tidak Ada", "Rumah Rusak Ringan: 254 Rumah"],
     deskripsi:
       "Wilayah pesisir utara dengan topografi bergelombang. Risiko banjir relatif rendah namun perlu waspada saat hujan ekstrem berkepanjangan.",
     mitigasi: "Sistem drainase alami, pemantauan cuaca, jalur evakuasi",
@@ -93,10 +93,10 @@ var floodData = {
   },
   "Parigi Moutong": {
     tingkatRisiko: "Sedang",
-    frekuensiBanjir: "5-7 kali per tahun",
+    frekuensiBanjir: "5-12 kali per 3 tahun",
     wilayahTerdampak: "Parigi, Kasimbar, Tinombo",
-    korban: ["Korban Jiwa: 2 Orang", "Korban Luka-luka: Tidak Ada", "Korban Mengungsi: Tidak Ada"],
-    rumahRusak: ["Rumah Rusak Berat: Tidak Ada", "Rumah Rusak Sedang: Tidak Ada", "Rumah Rusak Ringan: Tidak Ada"],
+    korban: ["Korban Jiwa: 13 Orang", "Korban Luka-luka: Tidak Ada", "Korban Mengungsi: 17.598"],
+    rumahRusak: ["Rumah Rusak Berat: 24 Rumah", "Rumah Rusak Sedang: 12 Rumah", "Rumah Rusak Ringan: 80 Rumah"],
     deskripsi:
       "Area pertanian dengan sistem irigasi yang perlu perbaikan. Berpotensi banjir saat hujan lebat berkepanjangan dan luapan sungai-sungai di DAS Parigi.",
     mitigasi:
@@ -105,10 +105,10 @@ var floodData = {
   },
   Poso: {
     tingkatRisiko: "Sedang",
-    frekuensiBanjir: "4-6 kali per tahun",
+    frekuensiBanjir: "8-18 kali per 3 tahun",
     wilayahTerdampak: "Poso Kota, Lage, Pamona",
-    korban: ["Korban Jiwa: 1 Orang", "Korban Luka-luka: Tidak Ada", "Korban Mengungsi: Tidak Ada"],
-    rumahRusak: ["Rumah Rusak Berat: Tidak Ada", "Rumah Rusak Sedang: Tidak Ada", "Rumah Rusak Ringan: Tidak Ada"],
+    korban: ["Korban Jiwa: Tidak Ada", "Korban Luka-luka: Tidak Ada", "Korban Mengungsi: 5.534"],
+    rumahRusak: ["Rumah Rusak Berat: 3 Rumah", "Rumah Rusak Sedang: 4 Rumah", "Rumah Rusak Ringan: 150 Rumah"],
     deskripsi:
       "Wilayah sekitar Danau Poso dengan potensi luapan danau dan sungai. Topografi berbukit dengan beberapa area dataran rendah rawan genangan.",
     mitigasi:
@@ -117,10 +117,10 @@ var floodData = {
   },
   Sigi: {
     tingkatRisiko: "Sangat Tinggi",
-    frekuensiBanjir: "7-10 kali per tahun",
+    frekuensiBanjir: "8-11 kali per 3 tahun",
     wilayahTerdampak: "Sigi Biromaru, Palolo, Dolo",
-    korban: ["Korban Jiwa: 4 Orang", "Korban Luka-luka: Tidak Ada", "Korban Mengungsi: Tidak Ada"],
-    rumahRusak: ["Rumah Rusak Berat: Tidak Ada", "Rumah Rusak Sedang: Tidak Ada", "Rumah Rusak Ringan: Tidak Ada"],
+    korban: ["Korban Jiwa: 3 Orang", "Korban Luka-luka: Tidak Ada", "Korban Mengungsi: 4.146"],
+    rumahRusak: ["Rumah Rusak Berat: 25 Rumah", "Rumah Rusak Sedang: 35 Rumah", "Rumah Rusak Ringan: 206 Rumah"],
     deskripsi:
       "Wilayah lembah dengan intensitas curah hujan sangat tinggi. Sungai Gumbasa dan Lariang sering meluap menggenangi pemukiman dan lahan pertanian.",
     mitigasi:
@@ -129,10 +129,10 @@ var floodData = {
   },
   "Tojo Una Una": {
     tingkatRisiko: "Rendah",
-    frekuensiBanjir: "2-4 kali per tahun",
+    frekuensiBanjir: "1-5 kali per 3 tahun",
     wilayahTerdampak: "Ampana, Una-Una, Togean",
-    korban: ["Korban Jiwa: Tidak Ada", "Korban Luka-luka: Tidak Ada", "Korban Mengungsi: Tidak Ada"],
-    rumahRusak: ["Rumah Rusak Berat: Tidak Ada", "Rumah Rusak Sedang: Tidak Ada", "Rumah Rusak Ringan: Tidak Ada"],
+    korban: ["Korban Jiwa: 1 Orang", "Korban Luka-luka: Tidak Ada", "Korban Mengungsi: 335 Orang"],
+    rumahRusak: ["Rumah Rusak Berat: 6 Rumah", "Rumah Rusak Sedang: Tidak Ada", "Rumah Rusak Ringan: Tidak Ada"],
     deskripsi:
       "Area dengan topografi relatif aman. Banjir lokal terjadi pada beberapa titik dekat aliran sungai kecil dan wilayah pesisir saat pasang tinggi.",
     mitigasi: "Drainase alami, pemeliharaan DAS, sistem informasi cuaca",
@@ -140,10 +140,10 @@ var floodData = {
   },
   "Toli Toli": {
     tingkatRisiko: "Sedang",
-    frekuensiBanjir: "4-5 kali per tahun",
+    frekuensiBanjir: "2-10 kali per 3 tahun",
     wilayahTerdampak: "Tolitoli Kota, Baolan, Galang",
-    korban: ["Korban Jiwa: 1 Orang", "Korban Luka-luka: Tidak Ada", "Korban Mengungsi: Tidak Ada"],
-    rumahRusak: ["Rumah Rusak Berat: Tidak Ada", "Rumah Rusak Sedang: Tidak Ada", "Rumah Rusak Ringan: Tidak Ada"],
+    korban: ["Korban Jiwa: TidaK Ada", "Korban Luka-luka: Tidak Ada", "Korban Mengungsi: 13.640"],
+    rumahRusak: ["Rumah Rusak Berat: 15 Rumah", "Rumah Rusak Sedang: Tidak Ada", "Rumah Rusak Ringan: 17 Rumah"],
     deskripsi:
       "Wilayah pesisir utara dengan dataran rendah rawan genangan saat intensitas hujan tinggi dan pasang laut. Kombinasi banjir sungai dan rob memperbesar dampak.",
     mitigasi:
