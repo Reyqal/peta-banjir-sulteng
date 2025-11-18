@@ -2,10 +2,10 @@
 var floodData = {
   Banggai: {
     tingkatRisiko: "Sedang",
-    frekuensiBanjir: "3-5 kali per tahun",
+    frekuensiBanjir: "1-18 kali per 3 tahun",
     wilayahTerdampak: "Luwuk, Batui, Banggai Utara",
-    korban: ["Korban Jiwa: 1 Orang", "Korban Luka-luka: Tidak Ada", "Korban Mengungsi: 2 - 3559 Orang"],
-    rumahRusak: ["Rumah Rusak Berat: 69 Rumah", "Rumah Rusak Sedang: 104 Rumah", "Rumah Rusak Ringan: 677 Rumah"],
+    korban: ["Korban Jiwa: 1 Orang", "Korban Luka-luka: Tidak Ada", "Korban Mengungsi: 3.631 Orang"],
+    rumahRusak: ["Rumah Rusak Berat: 52 Rumah", "Rumah Rusak Sedang: 54 Rumah", "Rumah Rusak Ringan: 141 Rumah"],
     deskripsi:
       "Banjir sering terjadi di kawasan pesisir dan dataran rendah, terutama saat musim hujan panjang dan pasang laut tinggi.",
     mitigasi: "Normalisasi sungai, pembuatan tanggul, early warning system",
@@ -13,9 +13,9 @@ var floodData = {
   },
   "Banggai Kepulauan": {
     tingkatRisiko: "Rendah",
-    frekuensiBanjir: "1-2 kali per tahun",
+    frekuensiBanjir: "1-8 kali per 3 tahun",
     wilayahTerdampak: "Salakan, Labobo",
-    korban: ["Korban Jiwa: Tidak Ada", "Korban Luka-luka: Tidak Ada", "Korban Mengungsi: Tidak Ada"],
+    korban: ["Korban Jiwa: Tidak Ada", "Korban Luka-luka: Tidak Ada", "Korban Mengungsi: 191"],
     rumahRusak: ["Rumah Rusak Berat: Tidak Ada", "Rumah Rusak Sedang: Tidak Ada", "Rumah Rusak Ringan: Tidak Ada"],
     deskripsi:
       "Banjir rob dan pasang laut tinggi sesekali menggenangi wilayah pesisir. Risiko banjir bandang sangat rendah karena topografi kepulauan.",
@@ -24,9 +24,9 @@ var floodData = {
   },
   "Banggai Laut": {
     tingkatRisiko: "Rendah",
-    frekuensiBanjir: "1-2 kali per tahun",
+    frekuensiBanjir: "0-3 kali per 3 tahun",
     wilayahTerdampak: "Banggai, Tinangkung",
-    korban: ["Korban Jiwa: Tidak Ada", "Korban Luka-luka: Tidak Ada", "Korban Mengungsi: Tidak Ada"],
+    korban: ["Korban Jiwa: Tidak Ada", "Korban Luka-luka: Tidak Ada", "Korban Mengungsi: 4"],
     rumahRusak: ["Rumah Rusak Berat: Tidak Ada", "Rumah Rusak Sedang: Tidak Ada", "Rumah Rusak Ringan: Tidak Ada"],
     deskripsi:
       "Wilayah kepulauan dengan ancaman terbatas. Lebih rentan terhadap abrasi dan banjir rob daripada banjir sungai.",
@@ -35,10 +35,10 @@ var floodData = {
   },
   Buol: {
     tingkatRisiko: "Rendah",
-    frekuensiBanjir: "2-3 kali per tahun",
+    frekuensiBanjir: "2-8 kali per 3 tahun",
     wilayahTerdampak: "Buol Kota, Momunu",
-    korban: ["Korban Jiwa: Tidak Ada", "Korban Luka-luka: Tidak Ada", "Korban Mengungsi: Tidak Ada"],
-    rumahRusak: ["Rumah Rusak Berat: Tidak Ada", "Rumah Rusak Sedang: Tidak Ada", "Rumah Rusak Ringan: Tidak Ada"],
+    korban: ["Korban Jiwa: 1", "Korban Luka-luka: Tidak Ada", "Korban Mengungsi: 16.603"],
+    rumahRusak: ["Rumah Rusak Berat: 8 Rumah", "Rumah Rusak Sedang: 7 Rumah", "Rumah Rusak Ringan: 7 Rumah"],
     deskripsi:
       "Area pesisir dengan topografi berbukit. Banjir lokal terjadi di beberapa titik rendah saat hujan ekstrem.",
     mitigasi: "Pembangunan drainase, reboisasi, pemantauan curah hujan",
@@ -46,10 +46,10 @@ var floodData = {
   },
   Donggala: {
     tingkatRisiko: "Tinggi",
-    frekuensiBanjir: "6-8 kali per tahun",
+    frekuensiBanjir: "5-7 kali per 3 tahun",
     wilayahTerdampak: "Banawa, Donggala Kota, Sirenja",
-    korban: ["Korban Jiwa: 3 Orang", "Korban Luka-luka: Tidak Ada", "Korban Mengungsi: Tidak Ada"],
-    rumahRusak: ["Rumah Rusak Berat: Tidak Ada", "Rumah Rusak Sedang: Tidak Ada", "Rumah Rusak Ringan: Tidak Ada"],
+    korban: ["Korban Jiwa: Tidak ada", "Korban Luka-luka: Tidak Ada", "Korban Mengungsi: 5.362"],
+    rumahRusak: ["Rumah Rusak Berat: 7 Rumah", "Rumah Rusak Sedang: 5 Rumah", "Rumah Rusak Ringan: 1 Rumah"],
     imageUrl: "img/donggala.jpg",
     deskripsi:
       "Wilayah pesisir dan dataran rendah sangat rawan banjir. Infrastruktur drainase terbatas dan sungai-sungai sering meluap saat musim hujan.",
@@ -58,9 +58,9 @@ var floodData = {
   },
   "Kota Palu": {
     tingkatRisiko: "Sangat Tinggi",
-    frekuensiBanjir: "8-12 kali per tahun",
+    frekuensiBanjir: "3-5 kali per 3 tahun",
     wilayahTerdampak: "Palu Barat, Palu Timur, Palu Utara, Tatanga, Tawaeli",
-    korban: ["Korban Jiwa: 5 Orang", "Korban Luka-luka: Tidak Ada", "Korban Mengungsi: Tidak Ada"],
+    korban: ["Korban Jiwa: Tidak ada", "Korban Luka-luka: Tidak Ada", "Korban Mengungsi: 6.194"],
     rumahRusak: ["Rumah Rusak Berat: Tidak Ada", "Rumah Rusak Sedang: Tidak Ada", "Rumah Rusak Ringan: Tidak Ada"],
     imageUrl: "img/palu.jpg",
     deskripsi:
@@ -70,10 +70,10 @@ var floodData = {
   },
   Morowali: {
     tingkatRisiko: "Sedang",
-    frekuensiBanjir: "4-6 kali per tahun",
+    frekuensiBanjir: "1-8 kali per 3 tahun",
     wilayahTerdampak: "Bungku, Bahodopi, Petasia",
-    korban: ["Korban Jiwa: 1 Orang", "Korban Luka-luka: Tidak Ada", "Korban Mengungsi: Tidak Ada"],
-    rumahRusak: ["Rumah Rusak Berat: Tidak Ada", "Rumah Rusak Sedang: Tidak Ada", "Rumah Rusak Ringan: Tidak Ada"],
+    korban: ["Korban Jiwa: Tidak ada", "Korban Luka-luka: 1 ", "Korban Mengungsi: 700"],
+    rumahRusak: ["Rumah Rusak Berat: Tidak Ada", "Rumah Rusak Sedang: 7 Rumah", "Rumah Rusak Ringan: 16 Rumah"],
     deskripsi:
       "Daerah perbukitan dengan beberapa titik rawan longsor dan genangan. Banjir bandang dapat terjadi di lembah-lembah sungai saat hujan lebat.",
     mitigasi:
