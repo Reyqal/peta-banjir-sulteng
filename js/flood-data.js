@@ -57,7 +57,7 @@ var floodData = {
       "Pembangunan tanggul, normalisasi 5 sungai utama, sistem pompa air, early warning"
   },
   "Kota Palu": {
-    tingkatRisiko: "Sangat Tinggi",
+    tingkatRisiko: "Tinggi",
     frekuensiBanjir: "3-5 kali per 3 tahun",
     wilayahTerdampak: "Palu Barat, Palu Timur, Palu Utara, Tatanga, Tawaeli",
     korban: ["Korban Jiwa: Tidak ada", "Korban Luka-luka: Tidak Ada", "Korban Mengungsi: 6.194"],
@@ -116,7 +116,7 @@ var floodData = {
     imageUrl : "img/poso.jpeg"
   },
   Sigi: {
-    tingkatRisiko: "Sangat Tinggi",
+    tingkatRisiko: "Tinggi",
     frekuensiBanjir: "8-11 kali per 3 tahun",
     wilayahTerdampak: "Sigi Biromaru, Palolo, Dolo",
     korban: ["Korban Jiwa: 3 Orang", "Korban Luka-luka: Tidak Ada", "Korban Mengungsi: 4.146"],
