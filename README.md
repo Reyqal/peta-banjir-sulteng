@@ -13,6 +13,8 @@ Membuat peta interaktif resiko bencana disulawesi tengah:  banjir
 
 ### Sumber Data (BPS SULTENG):
 [1. Jumlah Terjadi Bencana Alam ](https://sulteng.bps.go.id/id/statistics-table/3/TUZaMGVteFVjSEJ4T1RCMlIyRjRTazVvVDJocVFUMDkjMyM3MjAw/jumlah-bencana-alam-menurut-kabupaten-kota-dan-jenis-bencana-alam-kejadian-di-provinsi-sulawesi-tengah.html?year=2024)
+
 [2. Jumlah Kerusakan Rumah Akibat Bencana Alam ](https://sulteng.bps.go.id/id/statistics-table/3/UjFsT05rbGlXWE55VWpScU1VZGxMMk5YSzBrMmR6MDkjMyM3MjAw/jumlah-kerusakan-rumah-yang-diakibatkan-bencana-alam-menurut-kabupaten-kota-dan-jenis-bencana-alam-di-provinsi-sulawesi-tengah-unit-.html?year=2024)
+
 [3. Jumlah Korban Bencana Alam](https://sulteng.bps.go.id/id/statistics-table/3/T0VGNVR6UkVaakVyUmxWTU1YTlhSQzkzYW1vclFUMDkjMyM3MjAw/jumlah-korban-yang-diakibatkan-bencana-alam-menurut-kabupaten-kota-dan-jenis-bencana-alam-di-provinsi-sulawesi-tengah-orang-.html?year=2024)
 
