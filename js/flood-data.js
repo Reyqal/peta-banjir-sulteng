@@ -1,7 +1,7 @@
 // Data informasi banjir untuk setiap kabupaten/kota di Sulawesi Tengah
 var floodData = {
   Banggai: {
-    tingkatRisiko: "Sedang",
+    tingkatRisiko: "Tinggi",
     frekuensiBanjir: "1-18 kali per 3 tahun",
     wilayahTerdampak: "Luwuk, Batui, Banggai Utara",
     korban: ["Korban Jiwa: 1 Orang", "Korban Luka-luka: Tidak Ada", "Korban Mengungsi: 3.631 Orang"],
@@ -45,7 +45,7 @@ var floodData = {
     imageUrl : "img/buol.jpg"
   },
   Donggala: {
-    tingkatRisiko: "Tinggi",
+    tingkatRisiko: "Sedang",
     frekuensiBanjir: "5-7 kali per 3 tahun",
     wilayahTerdampak: "Banawa, Donggala Kota, Sirenja",
     korban: ["Korban Jiwa: Tidak ada", "Korban Luka-luka: Tidak Ada", "Korban Mengungsi: 5.362"],
@@ -57,7 +57,7 @@ var floodData = {
       "Pembangunan tanggul, normalisasi 5 sungai utama, sistem pompa air, early warning"
   },
   "Kota Palu": {
-    tingkatRisiko: "Tinggi",
+    tingkatRisiko: "Sedang",
     frekuensiBanjir: "3-5 kali per 3 tahun",
     wilayahTerdampak: "Palu Barat, Palu Timur, Palu Utara, Tatanga, Tawaeli",
     korban: ["Korban Jiwa: Tidak ada", "Korban Luka-luka: Tidak Ada", "Korban Mengungsi: 6.194"],
@@ -92,7 +92,7 @@ var floodData = {
     imageUrl : "img/morowali_utara.jpg"
   },
   "Parigi Moutong": {
-    tingkatRisiko: "Sedang",
+    tingkatRisiko: "Tinggi",
     frekuensiBanjir: "5-12 kali per 3 tahun",
     wilayahTerdampak: "Parigi, Kasimbar, Tinombo",
     korban: ["Korban Jiwa: 13 Orang", "Korban Luka-luka: Tidak Ada", "Korban Mengungsi: 17.598"],
@@ -104,7 +104,7 @@ var floodData = {
     imageUrl : "img/parigi_moutong.jpeg"
   },
   Poso: {
-    tingkatRisiko: "Sedang",
+    tingkatRisiko: "Tinggi",
     frekuensiBanjir: "8-18 kali per 3 tahun",
     wilayahTerdampak: "Poso Kota, Lage, Pamona",
     korban: ["Korban Jiwa: Tidak Ada", "Korban Luka-luka: Tidak Ada", "Korban Mengungsi: 5.534"],
